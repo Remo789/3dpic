@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Image to 3D Motion Video&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="stylesheet" href="style.css"&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1&gt;Image to 3D Motion Video Converter&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="disclaimer"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;strong&gt;Note:&lt;/strong&gt; This is a front-end interface. Actual 3D video conversion requires complex server-side processing.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="upload-section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;label for="imageUpload" class="upload-button"&gt;Choose Image&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input type="file" id="imageUpload" accept="image/png, image/jpeg, image/webp"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span id="fileName"&gt;No file chosen&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="previewArea" class="preview-area" style="display: none;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2&gt;Preview:&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;img id="imagePreview" src="#" alt="Image Preview"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="motionOptions" class="motion-options" style="display: none;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2&gt;Choose 3D Motion Effect:&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="options-grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;label class="option-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;input type="radio" name="motionEffect" value="zoom-in" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="option-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;img src="placeholder-icon.png" alt="Zoom In Icon"&gt; &lt;!-- Replace with actual icons --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span&gt;Zoom In&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p&gt;Gentle forward camera movement.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;label class="option-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;input type="radio" name="motionEffect" value="zoom-out"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="option-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                         </span>&lt;img src="placeholder-icon.png" alt="Zoom Out Icon"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span&gt;Zoom Out&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p&gt;Gentle backward camera movement.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;label class="option-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;input type="radio" name="motionEffect" value="pan-left"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="option-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                         </span>&lt;img src="placeholder-icon.png" alt="Pan Left Icon"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span&gt;Pan Left&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p&gt;Smooth camera pan to the left.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>&lt;label class="option-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;input type="radio" name="motionEffect" value="pan-right"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="option-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                         </span>&lt;img src="placeholder-icon.png" alt="Pan Right Icon"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span&gt;Pan Right&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p&gt;Smooth camera pan to the right.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>&lt;label class="option-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;input type="radio" name="motionEffect" value="tilt-up"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="option-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                         </span>&lt;img src="placeholder-icon.png" alt="Tilt Up Icon"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span&gt;Tilt Up&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p&gt;Camera looks slightly upwards.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>&lt;label class="option-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;input type="radio" name="motionEffect" value="circle"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="option-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                         </span>&lt;img src="placeholder-icon.png" alt="Circle Icon"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span&gt;Circle&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p&gt;Subtle circular camera motion.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Add more motion options as needed --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="convert-section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">             </span>&lt;button id="convertButton" disabled&gt;Select Image &amp; Effect&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="statusArea" class="status-area"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Status messages will appear here --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="downloadArea" class="download-area" style="display: none;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2&gt;Conversion Complete!&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;a id="downloadLink" href="#" download="3d_motion_video.mp4" class="download-button"&gt;Download MP4 Video&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="script.js"&gt;&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
